@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./design.css">
+</head>
+<body>
+    <div id="calculator">
+        <div id="output"></div>
+        <button class="button" onclick="">(</button>
+        <button class="button" onclick="">)</button>
+        <button class="button" onclick="">Del</button>
+        <button class="button" onclick="clearOutput()">AC</button>
+        <button class="button" onclick="appendToOutput('7')">7</button>
+        <button class="button" onclick="appendToOutput('8')">8</button>
+        <button class="button" onclick="appendToOutput('9')">9</button>
+        <button class="button" onclick="appendToOutput('/')">/</button>
+        <button class="button" onclick="appendToOutput('4')">4</button>
+        <button class="button" onclick="appendToOutput('5')">5</button>
+        <button class="button" onclick="appendToOutput('6')">6</button>
+        <button class="button" onclick="appendToOutput('*')">*</button>
+        <button class="button" onclick="appendToOutput('1')">1</button>
+        <button class="button" onclick="appendToOutput('2')">2</button>
+        <button class="button" onclick="appendToOutput('3')">3</button>
+        <button class="button" onclick="appendToOutput('-')">-</button>
+        <button class="button" onclick="appendToOutput('0')">0</button>
+        <button class="button" onclick="appendToOutput('.')">.</button>
+        <button class="button" onclick="calculateResult('=')">=</button>
+        <button class="button" onclick="appendToOutput('+')">+</button>
+    </div>
+
+    <script>
+        let output = '';
+
+function appendToOutput (value){
+    output += value;
+    document.getElementById('output'). innerText=output;
+}
+function clearOutput(){
+    output ='';
+    document.getElementById('output'). innerText=output;
+}
+function calculateResult(){
+    try{
+        output=eval(output).toString();
+        document.getElementById('output'). innerText=output;
+    } catch (error) {
+        document.getElementById('output'). innerText=output;
+    }
+}
+    </script>
+
+</body>
+</html>
+
